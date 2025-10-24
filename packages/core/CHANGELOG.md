@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.0.3 (2025-10-24)
+
+### Bug Fixes
+
+- **core**: Update hi function
+  ([`a457f8a`](https://github.com/mdop297/uv-monorepo/commit/a457f8a3e7704959f0397b749a43f6ea807791d0))
+
+
 ## v0.0.2 (2025-10-24)
 
 ### Bug Fixes
