@@ -217,3 +217,54 @@ semantic-release --noop version --print
 # create the release
 semantic-release version
 ```
+
+## Coding → Committing → Releasing
+- Make changes in `core`:
+```bash
+# NOTE: change dir to project's root folder
+sed -i'' -e 's/\(hi from core\)/\1 - updated!/' ./packages/core/src/uvws_core/__init__.py
+git add ./packages/core/src/uvws_core/__init__.py
+git commit -m "fix(core): Update hi function"
+git push origin main
+```
+- Release the updated package:
+```bash
+cd packages/core
+semantic-release version
+```
+- Since we committed a minor (fix) change, this will bump to 0.0.2.
+```bash
+git tag -l |grep core
+# core-0.1.0
+# core-0.1.1
+# core-0.1.2
+```
+
+- check the change log:
+```bash
+cat ./packages/core/CHANGELOG.md
+```
+
+# Release via Github Actions
+## The GitHub Action files
+
+```bash
+# NOTE: change dir to project's root folder
+mkdir -p ./.github/workflows
+# a reusable workflow to release any package
+curl https://github.com/asaf/uvws/blob/main/.github/workflows/release-package.yml -o ./.github/workflows/release-package.yml
+# the actual release workflow, releasing core, svc1 and the uvws root package
+curl https://github.com/asaf/uvws/blob/main/.github/workflows/release.yml -o.yml
+# a script syncing the repo to latest
+curl https://raw.githubusercontent.com/asaf/uvws/refs/heads/main/scripts/update_package_deps.py -o ./scripts/update_package_deps.py
+git add .github/*
+git commit -m 'build: release automations via github action'
+git push origin HEAD:main
+```
+
+- Add a secret named PYPI_API_TOKEN to the repo via UI or CLI containing the pypi token.
+```bash
+echo "my_token" | gh secret set PYPI_API_TOKEN --repo <user>/<repo>
+```
+
+- Try to commit and push to main or beta, which will auto trigger a release and push the built artifact to PYPI.
