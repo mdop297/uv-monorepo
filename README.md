@@ -104,3 +104,20 @@ git remote add origin https://github.com/mdop297/uv-monorepo.git
 git branch -M main
 git push origin main
 ```
+
+10.1. Releasing core
+```bash
+# change "hi from core" -> "hi from core!"
+sed -i '' 's/return "hi from core"/return "hi from core!"/' packages/core/src/uvws_core/__init__.py
+git add packages/core/src/uvws_core/__init__.py
+git commit -m 'fix(core): a minor change in __init__.py'
+```
+
+10.2. 
+```bash
+cd packages/core
+# next version is 0.1.0
+semantic-release --noop version --print
+# create the release
+semantic-release version
+```

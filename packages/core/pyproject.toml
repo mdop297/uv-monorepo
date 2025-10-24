@@ -17,7 +17,8 @@ requires = ["uv_build>=0.8.22,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.semantic_release]
-build_command = "python -m pip install uv && python -m uv build"
+# preinstall uv so we don’t install it at build time
+build_command = "uv build"
 commit_parser = "../../scripts/psr/custom_parser/monorepo_parser.py:ConventionalCommitMonorepoParser"
 commit_message = """
 chore(core-release): Release `core@{version}` [skip ci]
