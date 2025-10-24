@@ -54,3 +54,14 @@ unzip -l ./dist/uvws_svc1-0.1.0-py3-none-any.whl # inspect whl package
 unzip -p ./dist/uvws_svc1-0.1.0-py3-none-any.whl 'uvws_svc1-0.1.0.dist-info/METADATA' | grep '^Requires-Dist'
 rm -rf ./dist
 ```
+
+6. Installing Dependencies
+```bash
+uv add python-semantic-release --dev
+```
+
+7. Downloading the Monorepo Parser
+```bash
+mkdir -p ./scripts/psr/custom_parser
+curl https://raw.githubusercontent.com/asaf/uvws/refs/heads/main/scripts/psr/custom_parser/monorepo_parser.py -o ./scripts/psr/custom_parser/monorepo_parser.py
+```
