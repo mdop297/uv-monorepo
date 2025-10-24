@@ -1,6 +1,6 @@
 [project]
 name = "uvws-svc1"
-version = "0.1.0"
+version = "0.0.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
@@ -21,7 +21,7 @@ build-backend = "uv_build"
 [tool.uv.sources]
 uvws-core = { workspace = true }
 [tool.semantic_release]
-build_command = "pip install uv && uv build"
+build_command = "uv build"
 commit_parser = "../../scripts/psr/custom_parser/monorepo_parser.py:ConventionalCommitMonorepoParser"
 commit_message = """\
 chore(svc1-release): Release `svc1@{version}` [skip ci]
