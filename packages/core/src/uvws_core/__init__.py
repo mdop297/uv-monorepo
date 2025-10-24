@@ -6,4 +6,4 @@ __version__ = "0.0.1"
 
 
 def hi() -> str:
-    return "hi from core! v" + __version__
+    return "hi from core! version: " + __version__
