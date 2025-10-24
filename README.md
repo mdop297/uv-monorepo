@@ -209,6 +209,8 @@ git add pyproject.toml ./src/uvws/__init__.py
 git commit -m 'chore: configure PSR for root package'
 ```
 
+- REMEMBER TO REVIEW `build_command` in `pyproject.toml` file
+
 ```bash
 # next version is 0.1.0
 semantic-release --noop version --print
