@@ -1,2 +1,7 @@
+from uvws_core import hi
+
+__version__ = "0.0.0"
+
+
 def main() -> None:
-    print("Hello from uvws-svc1!")
+    print("svc1 say: ", hi())
