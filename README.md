@@ -113,7 +113,12 @@ git add packages/core/src/uvws_core/__init__.py
 git commit -m 'fix(core): a minor change in __init__.py'
 ```
 
+
 10.2. 
+- remember to generate github token then export it into your shell:
+
+
+
 ```bash
 cd packages/core
 # next version is 0.1.0
