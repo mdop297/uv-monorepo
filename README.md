@@ -115,10 +115,8 @@ git commit -m 'fix(core): a minor change in __init__.py'
 
 
 10.2. 
-- remember to generate github token then export it into your shell:
-
-
-
+- remember to generate github token then export it into your shell, view [this file](./generate_token.md):
+- to trigger release, please follow Conventional Commit Structure: `<type>[<pkg>-optional scope]: <description>`
 ```bash
 cd packages/core
 # next version is 0.1.0
