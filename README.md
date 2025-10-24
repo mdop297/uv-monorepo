@@ -95,3 +95,12 @@ dist_glob_patterns = ["../../dist/uvws_core-*"]
 
 EOF
 ```
+
+9. 
+```bash
+git add .
+git commit -m 'feat: create repo and push code'
+git remote add origin https://github.com/mdop297/uv-monorepo.git
+git branch -M main
+git push origin main
+```
