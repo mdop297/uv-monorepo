@@ -21,3 +21,8 @@ members = [
     "packages/core",
     "packages/svc1",
 ]
+
+[dependency-groups]
+dev = [
+    "python-semantic-release>=10.4.1",
+]
