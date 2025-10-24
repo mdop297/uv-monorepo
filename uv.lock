@@ -6,6 +6,7 @@ requires-python = ">=3.13"
 members = [
     "uvws",
     "uvws-core",
+    "uvws-svc1",
 ]
 
 [[package]]
@@ -17,3 +18,14 @@ source = { editable = "." }
 name = "uvws-core"
 version = "0.1.0"
 source = { editable = "packages/core" }
+
+[[package]]
+name = "uvws-svc1"
+version = "0.1.0"
+source = { editable = "packages/svc1" }
+dependencies = [
+    { name = "uvws-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "uvws-core", editable = "packages/core" }]

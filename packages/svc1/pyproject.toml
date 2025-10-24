@@ -1,5 +1,5 @@
 [project]
-name = "uvws"
+name = "uvws-svc1"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -7,17 +7,16 @@ authors = [
     { name = "mdop297", email = "lenhatminh297@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "uvws-core",
+]
 
 [project.scripts]
-uvws = "uvws:main"
+uvws-svc1 = "uvws_svc1:main"
 
 [build-system]
 requires = ["uv_build>=0.8.22,<0.9.0"]
 build-backend = "uv_build"
 
-[tool.uv.workspace]
-members = [
-    "packages/core",
-    "packages/svc1",
-]
+[tool.uv.sources]
+uvws-core = { workspace = true }
